@@ -4,10 +4,10 @@ function App() {
   return (
     <main>
       <header>
-        <img src="" alt="" />
+        <img src="/public/logo.png" alt="" />
       </header>
       <section>
-        <img src="" alt="" />
+        <img src="/public/banner.png" alt="" />
       </section>
     </main>
   );
