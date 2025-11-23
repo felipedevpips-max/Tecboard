@@ -7,3 +7,13 @@
   max-width: 90%;
   margin: 64px auto;
 }
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.acoes {
+  margin-top: 32px;
+  text-align: center;
+}
