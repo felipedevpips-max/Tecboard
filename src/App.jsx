@@ -1,4 +1,6 @@
 import "./App.css";
+import { Banner } from "./componentes/Banner";
+import { CardEvento } from "./componentes/CardEvento";
 import { FormularioDeEvento } from "./componentes/FormularioDeEvento";
 import { Tema } from "./componentes/Tema";
 //NO REACT,COMPONENTES SÃO FUNÇÕES
@@ -35,33 +37,34 @@ function App() {
     },
   ];
 
+  const evento = [
+    {
+      capa: "./card-mulheres-front.svg",
+      tema: temas[0],
+      data: new Date(),
+      titulo: "Mulheres no Front",
+      texto:
+        "Valorizando e impulsionando a participação feminina no desenvolvimento front-end.",
+    },
+  ];
+
+  //.map vai pervcorrer o array e permitir modificado e retornando
+
   return (
     <main>
       <header>
         <img src="/public/logo.png" alt="" />
       </header>
-      <section>
-        <img src="/public/banner.png" alt="" />
-      </section>
+      <Banner />
       <FormularioDeEvento />
-      <section>
-        <Tema tema={temas[0]} />
-      </section>
-      <section>
-        <Tema tema={temas[1]} />
-      </section>
-      <section>
-        <Tema tema={temas[2]} />
-      </section>
-      <section>
-        <Tema tema={temas[3]} />
-      </section>
-      <section>
-        <Tema tema={temas[4]} />
-      </section>
-      <section>
-        <Tema tema={temas[5]} />
-      </section>
+      {temas.map(function (item) {
+        return (
+          <section key={item.id}>
+            <Tema tema={item} />
+            <CardEvento evento={evento[0]} />
+          </section>
+        );
+      })}
     </main>
   );
 }
