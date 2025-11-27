@@ -3,6 +3,7 @@ import { Banner } from "./componentes/Banner";
 import { CardEvento } from "./componentes/CardEvento";
 import { FormularioDeEvento } from "./componentes/FormularioDeEvento";
 import { Tema } from "./componentes/Tema";
+import { useState } from "react";
 //NO REACT,COMPONENTES SÃO FUNÇÕES
 
 //props e um OBJETO
@@ -37,7 +38,7 @@ function App() {
     },
   ];
 
-  const evento = [
+  const [eventos, setEventos] = useState([
     {
       capa: "./card-mulheres-front.svg",
       tema: temas[0],
@@ -46,7 +47,12 @@ function App() {
       texto:
         "Valorizando e impulsionando a participação feminina no desenvolvimento front-end.",
     },
-  ];
+  ]);
+
+  function adicionarEvento(evento) {
+    setEventos([...eventos, evento]);
+    console.log("eventos =>", eventos);
+  }
 
   //.map vai pervcorrer o array e permitir modificado e retornando
 
@@ -56,12 +62,14 @@ function App() {
         <img src="/public/logo.png" alt="" />
       </header>
       <Banner />
-      <FormularioDeEvento temas={temas} />
+      <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
       {temas.map(function (item) {
         return (
           <section key={item.id}>
             <Tema tema={item} />
-            <CardEvento evento={evento[0]} />
+            {eventos.map(function (item, index) {
+              return <CardEvento evento={item} key={index} />;
+            })}
           </section>
         );
       })}
