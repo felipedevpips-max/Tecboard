@@ -1,0 +1,56 @@
+.card-evento {
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  width: 282px;
+  color: #ffffff;
+}
+
+.card-evento p,
+.card-evento h4 {
+  margin: 0;
+}
+
+.card-evento .corpo {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-evento .tag {
+  background-color: #4a4949;
+  border-radius: 4px;
+  padding: 8px;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 10%;
+}
+
+.card-evento .data {
+  font-family: "Worksans", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.card-evento .titulo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 125%;
+  letter-spacing: 0;
+}
+
+.card-evento .texto {
+  font-family: "Worksans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+}
